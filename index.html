@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VALORANT // Protocol Database</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="brand">
+      <div class="brand-logo"></div>
+      <h1>VALORANT ARCHIVE</h1>
+    </div>
+    <div class="tabs">
+      <button class="tab-btn active" id="tabAgents" onclick="switchTab('agents')">AGENTS</button>
+      <button class="tab-btn" id="tabWeapons" onclick="switchTab('weapons')">WEAPONS</button>
+    </div>
+  </header>
+
+  <!-- Controls & Search -->
+  <section class="controls">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Cari agent atau senjata..." oninput="handleSearch()" />
+    </div>
+    <div class="filter-tags" id="filterTags"></div>
+  </section>
+
+  <!-- Main Grid Display -->
+  <main class="container">
+    <div id="loading" class="loader">SYNCHRONIZING PROTOCOL DATA...</div>
+    <div id="contentGrid" class="grid"></div>
+  </main>
+
+  <!-- Detail Modal -->
+  <div class="modal-overlay" id="detailModal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close modal">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- External JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
